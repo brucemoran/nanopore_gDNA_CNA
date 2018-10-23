@@ -69,8 +69,11 @@ From:centos:centos7.4.1708
     cd /usr/local/src
 
     #MinionQC
-    wget https://github.com/roblanf/minion_qc/blob/feature/detect_png/MinIONQC.R -O MinIONQC.R
-    echo -e "#! /bin/bash\nMINIONQCR=\$(echo \$0".R")\nRscript --vanilla \$MINIONQCR -i \$1\n" > /usr/local/bin/MinIONQC
+    git clone https://github.com/roblanf/minion_qc
+    cp minion_qc/MinIONQC.R /usr/local/src/MinIONQC.R
+    chmod a+x /usr/local/src/MinIONQC.R
+    rm -rf minion_qc
+    echo -e "#! /bin/bash\nRscript --vanilla /usr/local/src/MinIONQC.R -i \$1\n" > /usr/local/bin/MinIONQC
     chmod 755 /usr/local/bin/MinIONQC
 
     #NanoStat
