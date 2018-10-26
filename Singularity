@@ -69,12 +69,8 @@ From:centos:centos7.4.1708
     cd /usr/local/src
 
     #MinionQC
-    git clone https://github.com/roblanf/minion_qc
-    cp minion_qc/MinIONQC.R /usr/local/src/MinIONQC.R
+    wget https://raw.githubusercontent.com/roblanf/minion_qc/feature/detect_png/MinIONQC.R
     chmod a+x /usr/local/src/MinIONQC.R
-    rm -rf minion_qc
-    echo -e "#! /bin/bash\nRscript --vanilla /usr/local/src/MinIONQC.R -i \$1\n" > /usr/local/bin/MinIONQC
-    chmod 755 /usr/local/bin/MinIONQC
 
     #NanoStat
     pip3.6 install nanostat
