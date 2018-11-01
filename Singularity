@@ -13,7 +13,8 @@ From:centos:centos7.4.1708
 
 %post
     #essential utilities
-    yum -y install git wget bzip2 unzip which emacs
+    yum -y install git wget bzip2 u
+    nzip which emacs
 
     #language and libraries
     yum -y install java-1.8.0-openjdk-devel gcc gcc-c++ glibc-devel make ncurses ncurses-devel zlib-devel libbzip2-devel bzip2-devel xz-devel perl-DBI perl-core lapack-devel atlas-devel freetype freetype-devel libpng-devel readline-devel pcre-devel libtool openssl-devel libxml2-devel mysql-devel tcl-devel tk-devel readline readline-devel pcre pcre-devel libcurl libcurl-devel
@@ -70,7 +71,8 @@ From:centos:centos7.4.1708
 
     #MinionQC
     wget https://raw.githubusercontent.com/roblanf/minion_qc/feature/detect_png/MinIONQC.R
-    chmod a+x /usr/local/src/MinIONQC.R
+    sed 's/.png/.pdf/g' /usr/local/src/MinIONQC.R > /usr/local/src/MinIONQC.pdf.R
+    chmod a+x /usr/local/src/MinIONQC.pdf.R
 
     #NanoStat
     pip3.6 install nanostat
