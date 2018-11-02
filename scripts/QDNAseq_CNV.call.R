@@ -48,9 +48,6 @@ r <- applyFilters(r, residual = F, blacklist = F, mappability = F, bases = 100, 
 r <- estimateCorrection(r)
 r <- correctBins(r, method = "none")
 r <- normalizeBins(r, method = "mean")
-r <- compareToReference(r, c(2, FALSE), force=T)
-# renormalize after substracting germline
-r <- normalizeBins(r, method = "mean", force=T)
 
 x <- data.frame(r@featureData@data$chromosome, r@featureData@data$start, r@assayData$copynumber, r@featureData@data$use)
 xx <- subset(x, r.featureData.data.use==T)
