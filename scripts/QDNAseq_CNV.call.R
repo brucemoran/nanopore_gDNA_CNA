@@ -1,4 +1,6 @@
 #!/usr/bin/env R
+
+##adapted from https://gitlab.com/pesk/glioma.nano-seq/blob/master/scripts/createCNprofile.R
 libs <- c("QDNAseq", "QDNAseq.hg19", "PSCBS", "matrixStats","ggplot2", "caTools", "dplyr")
 libsLoaded <- lapply(libs,function(lib){suppressMessages(library(lib, character.only = TRUE))})
 options(scipen=999)
