@@ -1,0 +1,32 @@
+name: nanopore_gDNA_CNA
+channels:
+  - conda-forge
+  - r
+  - pcgr
+  - bioconda
+  - pwwang
+  - defaults
+dependencies:
+  - bcftools=1.9
+  - bioconductor-qdnaseq
+  - bioconductor-qdnaseq.hg19
+  - cnvkit=0.9.6
+  - cnvnator
+  - gridss
+  - h5py
+  - hmftools-purple
+  - jinja2
+  - minimap2=2.17
+  - nanostat
+  - pbsv=2.2.2
+  - plotly
+  - pycoqc=2.5.0.3
+  - R=3.6.0
+  - r-data.table
+  - r-facets
+  - r-minionqc
+  - r-sequenza
+  - r-tidyverse
+  - samtools=1.9
+  - sniffles
+  - tqdm
